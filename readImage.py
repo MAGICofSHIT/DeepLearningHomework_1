@@ -6,7 +6,7 @@ from rotateImage import rotate_image
 from color2Grey import color2grey
 from filpHorizontal import flip_image_horizontal
 from filpVertical import flip_image_vertical
-from extractContour import extract_contours_canny, extract_contours_canny, extract_contours_sobel
+from extractContour import extract_contours_canny, extract_contours_sobel
 from histogramEqualization import histogram_equalization
 from filter import mean_filter, gaussian_filter
 

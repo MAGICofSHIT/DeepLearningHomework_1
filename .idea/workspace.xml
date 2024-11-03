@@ -5,18 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d208cdb4-7ff4-409e-99ef-f06a3edfb406" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/BlackMythScreenshotBmpTest.bmp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/color2Grey.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extractContour.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filpHorizontal.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filpVertical.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/filter.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/grey2Color.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/histogramEqualization.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resizeImage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rotateImage.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/readImage.py" beforeDir="false" afterPath="$PROJECT_DIR$/readImage.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +77,7 @@
       <workItem from="1730631216363" duration="49000" />
       <workItem from="1730631272460" duration="33000" />
       <workItem from="1730631311455" duration="60000" />
-      <workItem from="1730631568992" duration="12329000" />
+      <workItem from="1730631568992" duration="12628000" />
     </task>
     <servers />
   </component>
