@@ -1,5 +1,6 @@
 from PIL import Image
 
+
 # 定义一个函数，用于旋转图像
 def rotate_image(file_name, degrees):
     """

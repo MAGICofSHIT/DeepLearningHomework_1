@@ -55,10 +55,10 @@ try:
         histogram_equalization(colorImagePath)
 
         # 均值滤波
-        mean_filter(colorImagePath)
+        mean_filter(colorImagePath, 5, 5)
 
         # 高斯滤波
-        gaussian_filter(colorImagePath)
+        gaussian_filter(colorImagePath, 5, 5, 0)
 except FileNotFoundError:
     # 如果文件没有找到，打印错误信息
     print(f"错误：文件'{colorImagePath}'未找到，请检查路径是否正确。")

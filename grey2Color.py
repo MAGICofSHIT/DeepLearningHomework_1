@@ -1,5 +1,4 @@
 from PIL import Image
-import math
 
 
 # 定义一个函数，用于将灰度图转换为RGB类型的伪彩图像

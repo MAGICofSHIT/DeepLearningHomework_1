@@ -50,6 +50,11 @@ def histogram_equalization(file_name):
         plt.plot(bins_g[0:-1], hist_g, color='g', label='Green')
         plt.plot(bins_r[0:-1], hist_r, color='r', label='Red')
 
+        # 保存原始直方图图像
+        plt.savefig('Original Histogram.png')
+        plt.show()
+        plt.close()
+
         # 绘制均衡化后图像的直方图
         plt.figure()
         plt.title("Equalized Histogram")
@@ -61,7 +66,8 @@ def histogram_equalization(file_name):
         plt.legend()
 
         # 保存直方图图像
-        plt.savefig('histogram.png')
+        plt.savefig('Equalized Histogram.png')
+        plt.show()
         plt.close()
 
         # 显示均衡化后的图像
