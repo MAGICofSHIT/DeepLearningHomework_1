@@ -10,7 +10,7 @@ from extractContour import extract_contours_canny, extract_contours_sobel
 from histogramEqualization import histogram_equalization
 from filter import mean_filter, gaussian_filter
 
-# 让用户输入文件名
+# 让用户输入文件名1
 colorImagePath = "BlackMythScreenshotBmpTest.bmp"
 greyImagePath = "BlackMythScreenshotBmpTest_gray.bmp"
 
