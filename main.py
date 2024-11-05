@@ -14,6 +14,15 @@ from filter import mean_filter, gaussian_filter
 colorImagePath = "BlackMythScreenshotBmpTest.bmp"
 greyImagePath = "BlackMythScreenshotBmpTest_gray.bmp"
 
+# 均值滤波器参数
+m_mean = 15
+n_mean = 15
+
+# 高斯滤波参数
+m_gaussian = 15
+n_gaussian = 15
+sigma_gaussian = 0
+
 # 尝试打开图像文件
 try:
     # 使用Image.open()函数打开图像
