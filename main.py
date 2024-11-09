@@ -37,37 +37,37 @@ try:
         print(f"图像大小：宽度 = {width}像素, 高度 = {height}像素")
 
         # 旋转图像
-        rotate_image(colorImagePath, 45)
-
-        # 缩放图像
-        resize_image(colorImagePath, 0.3, 1.5)
-
-        # 彩图转灰度图
-        color2grey(colorImagePath)
+        # rotate_image(colorImagePath, 45)
+        #
+        # # 缩放图像
+        # resize_image(colorImagePath, 0.3, 1.5)
+        #
+        # # 彩图转灰度图
+        # color2grey(colorImagePath)
 
         # 灰度图转伪彩图
         grey2color(greyImagePath)
 
-        # 图像水平反转
-        flip_image_horizontal(colorImagePath)
-
-        # 图像垂直反转
-        flip_image_vertical(colorImagePath)
-
-        # 利用canny边缘检测器进行图像轮廓提取
-        extract_contours_canny(colorImagePath)
-
-        # 利用sobel算子进行图像轮廓提取
-        extract_contours_sobel(colorImagePath)
-
-        # 直方图均衡化
-        histogram_equalization(colorImagePath)
-
-        # 均值滤波
-        mean_filter(colorImagePath, 15, 15)
-
-        # 高斯滤波
-        gaussian_filter(colorImagePath, 15, 15, 0)
+        # # 图像水平反转
+        # flip_image_horizontal(colorImagePath)
+        #
+        # # 图像垂直反转
+        # flip_image_vertical(colorImagePath)
+        #
+        # # 利用canny边缘检测器进行图像轮廓提取
+        # extract_contours_canny(colorImagePath)
+        #
+        # # 利用sobel算子进行图像轮廓提取
+        # extract_contours_sobel(colorImagePath)
+        #
+        # # 直方图均衡化
+        # histogram_equalization(colorImagePath)
+        #
+        # # 均值滤波
+        # mean_filter(colorImagePath, 15, 15)
+        #
+        # # 高斯滤波
+        # gaussian_filter(colorImagePath, 15, 15, 0)
 except FileNotFoundError:
     # 如果文件没有找到，打印错误信息
     print(f"错误：文件'{colorImagePath}'未找到，请检查路径是否正确。")

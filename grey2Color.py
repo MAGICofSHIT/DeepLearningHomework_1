@@ -25,11 +25,28 @@ def grey2color(file_name):
                     # 获取灰度图像中当前像素的灰度值
                     grayscale_pixel = img.getpixel((x, y))
 
-                    # 将灰度值映射到蓝色和红色通道
-                    # 灰度值越小，蓝色成分越多；灰度值越大，红色成分越多
-                    blue = int(255 * (1 - grayscale_pixel / 255))  # 灰度值越小，蓝色越亮
-                    red = int(255 * (grayscale_pixel / 255))  # 灰度值越大，红色越亮
-                    green = grayscale_pixel  # 绿色通道保持灰度值
+                    # 灰度映射，将亮度低的映射为蓝色(冷色)，亮度高的映射为红色（暖色）
+                    # 输入灰度级        输出彩色
+                    # 0～63  1/4         蓝色
+                    # 64～127 2/4        紫色
+                    # 128～191 3/4       黄色
+                    # 192～255  4/4      红色
+                    if grayscale_pixel <= 63:
+                        red = 0
+                        green = grayscale_pixel * 4
+                        blue = 255
+                    elif grayscale_pixel <= 127:
+                        red = 0
+                        green = 255
+                        blue = -4 * grayscale_pixel + 2 * 255
+                    elif grayscale_pixel <= 191:
+                        red = 4 * grayscale_pixel - 2 * 255
+                        green = 255
+                        blue = 0
+                    else:
+                        red = 255
+                        green = 4 * (255 - grayscale_pixel)
+                        blue = 0
 
                     # 将映射后的RGB值赋给当前像素
                     rgb_img.putpixel((x, y), (red, green, blue))
