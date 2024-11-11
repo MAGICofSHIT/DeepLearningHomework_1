@@ -1,11 +1,12 @@
 from PIL import Image
+import random as r
 
 
 # 定义一个函数，用于将灰度图转换为RGB类型的伪彩图像
 def grey2color(file_name):
     """
     将指定的灰度图像文件转换为RGB类型的伪彩图像。
-    伪彩图像将使用蓝色和红色通道来表示灰度值，而绿色通道保持不变。
+    伪彩图像将亮度低的映射为蓝色(冷色)，亮度高的映射为红色（暖色）
 
     参数:
     file_name (str): 灰度图像文件的路径。
@@ -20,6 +21,9 @@ def grey2color(file_name):
             rgb_img = Image.new('RGB', (width, height))
 
             # 遍历图像的每个像素
+            randR = r.random()
+            randG = r.random()
+            randB = r.random()
             for x in range(width):
                 for y in range(height):
                     # 获取灰度图像中当前像素的灰度值
@@ -49,7 +53,7 @@ def grey2color(file_name):
                         blue = 0
 
                     # 将映射后的RGB值赋给当前像素
-                    rgb_img.putpixel((x, y), (red, green, blue))
+                    rgb_img.putpixel((x, y), (int(red * randR), int(green * randG), int(blue * randB)))
 
             # 显示伪彩图像
             rgb_img.show()
