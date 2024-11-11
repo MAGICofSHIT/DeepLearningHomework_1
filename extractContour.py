@@ -4,6 +4,12 @@ import numpy as np
 
 # 定义一个函数，利用canny边缘检测器提取图像的轮廓
 def extract_contours_canny(file_name):
+    """
+    从指定的图像文件中提取轮廓，并在原始图像上绘制这些轮廓。
+
+    参数:
+    file_name (str): 图像文件的路径。
+    """
     try:
         # 读取图像文件
         image = cv2.imread(file_name)
