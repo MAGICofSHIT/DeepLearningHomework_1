@@ -20,10 +20,12 @@ def grey2color(file_name):
             # 创建一个新的RGB图像
             rgb_img = Image.new('RGB', (width, height))
 
-            # 遍历图像的每个像素
+            # 每个通道随机取值系数
             randR = r.random()
             randG = r.random()
             randB = r.random()
+
+            # 遍历图像的每个像素
             for x in range(width):
                 for y in range(height):
                     # 获取灰度图像中当前像素的灰度值
