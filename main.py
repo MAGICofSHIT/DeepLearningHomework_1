@@ -30,18 +30,18 @@ if __name__ == '__main__':
         with Image.open(colorImagePath) as img:
             # 显示图像
             img.show()
-    
+
             # 获取图像的大小（宽度和高度）
             width, height = img.size
-    
+
             # 输出图像的大小信息
             print(f"图像大小：宽度 = {width}像素, 高度 = {height}像素")
-    
+
             # 旋转图像
             rotate_image(colorImagePath, 45)
 
             # 缩放图像
-            resize_image(colorImagePath, 0.3, 1.5)
+            resize_image(colorImagePath, 0.5, 1.2)
 
             # 彩图转灰度图
             color2grey(colorImagePath)

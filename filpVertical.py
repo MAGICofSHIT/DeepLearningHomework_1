@@ -20,7 +20,6 @@ def flip_image_vertical(file_name):
             flipped_img.show()
 
             # 保存垂直反转后的图像，这里使用原文件名加上"_verticallyFlipped"后缀
-            # 注意：这里使用"_flipped"后缀是为了保持一致性，但实际上是垂直反转
             flipped_file_name = file_name.rsplit('.', 1)[0] + '_verticallyFlipped.' + file_name.rsplit('.', 1)[1]
             flipped_img.save(flipped_file_name)
             print(f"垂直反转后的图像已保存为：{flipped_file_name}")
