@@ -54,7 +54,7 @@ def grey2color(file_name):
                         green = 4 * (255 - grayscale_pixel)
                         blue = 0
 
-                    # 将映射后的RGB值赋给当前像素
+                    # 将映射后的RGB值分别乘上随机系数后赋给当前像素
                     rgb_img.putpixel((x, y), (int(red * randR), int(green * randG), int(blue * randB)))
 
             # 显示伪彩图像
