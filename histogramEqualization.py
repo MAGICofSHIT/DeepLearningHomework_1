@@ -25,14 +25,14 @@ def histogram_equalization(file_name):
         equalized_image = cv2.merge((b_eq, g_eq, r_eq))
 
         # 计算原始图像的直方图
-        hist_b, bins_b = np.histogram(b.flatten(), 256, [0, 256])
-        hist_g, bins_g = np.histogram(g.flatten(), 256, [0, 256])
-        hist_r, bins_r = np.histogram(r.flatten(), 256, [0, 256])
+        hist_b, bins_b = np.histogram(b.flatten(), 256, [0, 255])
+        hist_g, bins_g = np.histogram(g.flatten(), 256, [0, 255])
+        hist_r, bins_r = np.histogram(r.flatten(), 256, [0, 255])
 
         # 计算均衡化后图像的直方图
-        hist_b_eq, bins_b_eq = np.histogram(b_eq.flatten(), 256, [0, 256])
-        hist_g_eq, bins_g_eq = np.histogram(g_eq.flatten(), 256, [0, 256])
-        hist_r_eq, bins_r_eq = np.histogram(r_eq.flatten(), 256, [0, 256])
+        hist_b_eq, bins_b_eq = np.histogram(b_eq.flatten(), 256, [0, 255])
+        hist_g_eq, bins_g_eq = np.histogram(g_eq.flatten(), 256, [0, 255])
+        hist_r_eq, bins_r_eq = np.histogram(r_eq.flatten(), 256, [0, 255])
 
         # 绘制原始图像的直方图
         plt.figure()
