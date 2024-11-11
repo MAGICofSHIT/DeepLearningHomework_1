@@ -18,9 +18,9 @@ def extract_contours_canny(file_name):
         edges = cv2.Canny(blurred, 50, 150)
 
         # 查找边缘的轮廓
-        contours, _ = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours = cv2.findContours(edges, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
 
-        # 在原始图像上z绘制轮廓
+        # 在原始图像上绘制轮廓
         contour_image = cv2.drawContours(image.copy(), contours, -1, (0, 255, 0), 2)
 
         # 显示带有轮廓的图像
@@ -46,12 +46,6 @@ def extract_contours_canny(file_name):
 
 # 定义一个函数，用于使用Sobel算子提取图像的轮廓
 def extract_contours_sobel(file_name):
-    """
-    从指定的图像文件中使用Sobel算子提取轮廓，并在原始图像上绘制这些轮廓。
-
-    参数:
-    file_name (str): 图像文件的路径。
-    """
     try:
         # 读取图像文件
         image = cv2.imread(file_name)
@@ -73,7 +67,7 @@ def extract_contours_sobel(file_name):
         ret, thresh = cv2.threshold(magnitude, 50, 255, cv2.THRESH_BINARY)
 
         # 查找阈值图像的轮廓
-        contours, _ = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        contours = cv2.findContours(thresh, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)[0]
 
         # 在原始图像上绘制轮廓
         contour_image = cv2.drawContours(image.copy(), contours, -1, (0, 255, 0), 2)

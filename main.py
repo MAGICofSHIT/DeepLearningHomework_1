@@ -60,15 +60,15 @@ if __name__ == '__main__':
 
             # 利用sobel算子进行图像轮廓提取
             extract_contours_sobel(colorImagePath)
-    
+
             # 直方图均衡化
             histogram_equalization(colorImagePath)
     
             # 均值滤波
-            mean_filter(colorImagePath, 15, 15)
+            mean_filter(colorImagePath, 25, 25)
 
             # 高斯滤波
-            gaussian_filter(colorImagePath, 15, 15, 0)
+            gaussian_filter(colorImagePath, 25, 25, 0)
     except FileNotFoundError:
         # 如果文件没有找到，打印错误信息
         print(f"错误：文件'{colorImagePath}'未找到，请检查路径是否正确。")

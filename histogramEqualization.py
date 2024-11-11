@@ -5,13 +5,6 @@ from matplotlib import pyplot as plt
 
 # 定义一个函数，用于对彩色图像进行直方图均衡化，并输出均衡化后的直方图
 def histogram_equalization(file_name):
-    """
-    对指定的彩色图像文件进行直方图均衡化，并显示原始和均衡化后的直方图。
-    同时，将直方图保存为图像文件。
-
-    参数:
-    file_name (str): 图像文件的路径。
-    """
     try:
         # 读取图像文件
         image = cv2.imread(file_name)  # 以彩色模式读取图像
@@ -49,6 +42,7 @@ def histogram_equalization(file_name):
         plt.plot(bins_b[0:-1], hist_b, color='b', label='Blue')
         plt.plot(bins_g[0:-1], hist_g, color='g', label='Green')
         plt.plot(bins_r[0:-1], hist_r, color='r', label='Red')
+        plt.legend()
 
         # 保存原始直方图图像
         plt.savefig(file_name.rsplit('.', 1)[0] + '_originalHistogram.' + file_name.rsplit('.', 1)[1])
