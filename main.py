@@ -14,15 +14,6 @@ from filter import mean_filter, gaussian_filter
 colorImagePath = "./Pictures/test.jpg"
 greyImagePath = "./Pictures/test_gray.jpg"
 
-# 均值滤波器参数
-m_mean = 15
-n_mean = 15
-
-# 高斯滤波参数
-m_gaussian = 15
-n_gaussian = 15
-sigma_gaussian = 0
-
 if __name__ == '__main__':
     # 尝试打开图像文件
     try:
