@@ -43,7 +43,7 @@ def histogram_equalization(file_name):
 
         # 绘制原始图像的直方图
         plt.figure()
-        plt.title("Original Histogram")
+        plt.title(file_name.rsplit('.', 1)[0].split('/')[-1] + "_originalHistogram." + file_name.rsplit('.', 1)[1])
         plt.xlabel("Pixel Intensity")
         plt.ylabel("Number of Pixels")
         plt.plot(bins_b[0:-1], hist_b, color='b', label='Blue')
@@ -51,13 +51,13 @@ def histogram_equalization(file_name):
         plt.plot(bins_r[0:-1], hist_r, color='r', label='Red')
 
         # 保存原始直方图图像
-        plt.savefig('Original Histogram.png')
+        plt.savefig(file_name.rsplit('.', 1)[0] + '_originalHistogram.' + file_name.rsplit('.', 1)[1])
         plt.show()
         plt.close()
 
         # 绘制均衡化后图像的直方图
         plt.figure()
-        plt.title("Equalized Histogram")
+        plt.title(file_name.rsplit('.', 1)[0].split('/')[-1] + "_equalizedHistogram." + file_name.rsplit('.', 1)[1])
         plt.xlabel("Pixel Intensity")
         plt.ylabel("Number of Pixels")
         plt.plot(bins_b_eq[0:-1], hist_b_eq, color='b', label='Blue')
@@ -66,13 +66,13 @@ def histogram_equalization(file_name):
         plt.legend()
 
         # 保存直方图图像
-        plt.savefig('Equalized Histogram.png')
+        plt.savefig(file_name.rsplit('.', 1)[0] + '_equalizedHistogram.' + file_name.rsplit('.', 1)[1])
         plt.show()
         plt.close()
 
         # 显示均衡化后的图像
         plt.figure()
-        plt.title("Equalized Image")
+        plt.title(file_name.rsplit('.', 1)[0].split('/')[-1] + "_equalized." + file_name.rsplit('.', 1)[1])
         plt.imshow(cv2.cvtColor(equalized_image, cv2.COLOR_BGR2RGB))  # 转换颜色空间以正确显示
         plt.show()
 
