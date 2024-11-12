@@ -5,6 +5,13 @@ from matplotlib import pyplot as plt
 
 # 定义一个函数，用于对彩色图像进行直方图均衡化，并输出均衡化后的直方图
 def histogram_equalization(file_name):
+    """
+    对指定的彩色图像文件进行直方图均衡化，并显示原始和均衡化后的直方图。
+    同时，将直方图保存为图像文件。
+
+    参数:
+    file_name (str): 图像文件的路径。
+    """
     try:
         # 读取图像文件
         image = cv2.imread(file_name)  # 以彩色模式读取图像
@@ -25,6 +32,9 @@ def histogram_equalization(file_name):
         equalized_image = cv2.merge((b_eq, g_eq, r_eq))
 
         # 计算原始图像的直方图
+        # hist指每个通道各像素值的出现次数，bins指直方图区间
+        # .flatten()将对应的颜色通道数据展平成一维数组，以便计算直方图
+        # 256指将直方图划分为256个区间，[0, 255]则代表直方图的区间范围
         hist_b, bins_b = np.histogram(b.flatten(), 256, [0, 255])
         hist_g, bins_g = np.histogram(g.flatten(), 256, [0, 255])
         hist_r, bins_r = np.histogram(r.flatten(), 256, [0, 255])
@@ -35,6 +45,7 @@ def histogram_equalization(file_name):
         hist_r_eq, bins_r_eq = np.histogram(r_eq.flatten(), 256, [0, 255])
 
         # 绘制原始图像的直方图
+        # [0:-1]代表去掉直方图区间的最后一个值
         plt.figure()
         plt.title(file_name.rsplit('.', 1)[0].split('/')[-1] + "_originalHistogram." + file_name.rsplit('.', 1)[1])
         plt.xlabel("Pixel Intensity")
